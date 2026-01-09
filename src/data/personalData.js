@@ -35,31 +35,41 @@ export const skills = [
 // Projetos (Baseados nos repositórios analisados)
 export const projects = [
   {
+    title: "Gaia Pet Sitter",
+    description: "Landing page para um serviço de pet sitter em Feira de Santana. Inclui sistema de agendamento simples, que direciona o usuário para conversar e contratar via WhatsApp com apenas um clique.",
+    tags: ["React", "Landing Page", "Agendamento", "WhatsApp", "Netlify"],
+    link: "https://github.com/MarcellyGuimaraes/gaia-petsitter-project",
+    demoLink: "https://gaiapetsitterfsa.netlify.app",
+    featured: true
+  },
+  {
     title: "Horrorflix",
     description: "Um clone de interface de streaming focado em filmes de terror. O projeto consome APIs externas de filmes, demonstrando manipulação avançada de DOM, design responsivo e consumo de dados assíncronos.",
     tags: ["JavaScript", "API Rest", "CSS3", "HTML5"],
-    link: "https://github.com/MarcellyGuimaraes",
-    featured: true
+    link: "https://github.com/MarcellyGuimaraes/Horrorflix",
+    demoLink: "https://horrorflix-celly.netlify.app",
+    featured: false
   },
   {
     title: "VUTTR (Very Useful Tools)",
     description: "Aplicação Full Stack para gerenciar um repositório de ferramentas úteis. Desafio técnico que envolveu criação de API, autenticação e um front-end moderno para listagem e busca.",
     tags: ["React", "Node.js", "Axios", "Styled Components"],
-    link: "https://github.com/MarcellyGuimaraes",
+    link: "https://github.com/MarcellyGuimaraes/vuttr-app",
+    demoLink: "https://vuttr-app-celly.netlify.app",
     featured: false
   },
   {
     title: "Mobile CRUD App",
     description: "Aplicativo móvel desenvolvido para operações de gerenciamento de dados. Demonstra a versatilidade em transitar do desenvolvimento web para o ecossistema mobile nativo.",
     tags: ["React Native", "Java", "Android Studio"],
-    link: "https://github.com/MarcellyGuimaraes",
+    link: "https://github.com/MarcellyGuimaraes/react-native-crud",
     featured: false
   },
   {
     title: "Soluções Freelance",
     description: "Diversos projetos comerciais entregues via Upwork e 99Freelas, focando em sites institucionais e sistemas de gestão personalizados para pequenas empresas.",
     tags: ["WordPress", "PHP", "Web Design", "SEO"],
-    link: "https://www.linkedin.com/in/marcellyguimaraes/",
+    demoLink: "https://br.fiverr.com/s/YR86j3l",
     featured: false
   }
 ];
