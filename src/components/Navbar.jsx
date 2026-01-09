@@ -15,8 +15,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
-          {['Sobre', 'Habilidades', 'Projetos'].map((item) => {
-             const id = item.toLowerCase() === 'sobre' ? 'about' : item.toLowerCase() === 'habilidades' ? 'skills' : 'projects';
+          {['Sobre', 'Habilidades', 'Projetos', 'Experiência'].map((item) => {
+             const id = item.toLowerCase() === 'sobre' ? 'about' : item.toLowerCase() === 'habilidades' ? 'skills' : item.toLowerCase() === 'projetos' ? 'projects' : 'experience';
              return (
               <button 
                 key={item}
@@ -44,8 +44,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
       {/* Mobile Menu */}
       <div className={`md:hidden fixed inset-0 bg-neutral-950 z-40 transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} pt-24 px-6`}>
          <div className="flex flex-col space-y-6">
-          {['Home', 'Sobre', 'Habilidades', 'Projetos', 'Contato'].map((item) => {
-             const id = item.toLowerCase() === 'home' ? 'home' : item.toLowerCase() === 'sobre' ? 'about' : item.toLowerCase() === 'habilidades' ? 'skills' : item.toLowerCase() === 'projetos' ? 'projects' : 'contact';
+          {['Home', 'Sobre', 'Habilidades', 'Projetos', 'Experiência', 'Contato'].map((item) => {
+             const id = item.toLowerCase() === 'home' ? 'home' : item.toLowerCase() === 'sobre' ? 'about' : item.toLowerCase() === 'habilidades' ? 'skills' : item.toLowerCase() === 'projetos' ? 'projects' : item.toLowerCase() === 'experiência' ? 'experience' : 'contact';
              return (
               <button 
                 key={item}
