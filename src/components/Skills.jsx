@@ -8,7 +8,7 @@ const Skills = ({ skillsData }) => {
   };
 
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-24 px-6 bg-neutral-950">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16 justify-end">
           <div className="h-px bg-neutral-700 flex-grow max-w-xs"></div>

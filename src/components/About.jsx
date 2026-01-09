@@ -2,7 +2,7 @@ import { Layout } from 'lucide-react';
 
 const About = ({ personalInfo }) => {
   return (
-    <section id="about" className="py-24 bg-neutral-900 relative">
+    <section id="about" className="py-24 bg-[#111111] relative">
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
           <span className="text-red-600 font-mono text-xl">01.</span>
