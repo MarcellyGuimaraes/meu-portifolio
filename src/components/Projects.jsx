@@ -9,7 +9,7 @@ const FolderIcon = ({ className }) => (
 
 const Projects = ({ projects, personalInfo }) => {
   return (
-    <section id="projects" className="py-24 bg-neutral-900">
+    <section id="projects" className="py-24 bg-[#111111]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-16">
           <span className="text-red-600 font-mono text-xl">03.</span>
@@ -26,10 +26,6 @@ const Projects = ({ projects, personalInfo }) => {
                 <div>
                   <div className="flex justify-between items-start mb-4">
                     <FolderIcon className={`w-10 h-10 ${project.featured ? 'text-red-500' : 'text-neutral-600'}`} />
-                    <div className="flex gap-4">
-                      <a href={project.link} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white transition-colors"><Github size={20} /></a>
-                      <a href={project.link} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white transition-colors"><ExternalLink size={20} /></a>
-                    </div>
                   </div>
 
                   <h3 className={`text-2xl font-bold text-white mb-4 group-hover:text-red-500 transition-colors ${project.featured ? 'text-3xl' : ''}`}>
@@ -43,13 +39,36 @@ const Projects = ({ projects, personalInfo }) => {
                   </div>
                 </div>
 
-                <ul className="flex flex-wrap gap-3 mt-auto">
-                  {project.tags.map((tag, tIdx) => (
-                    <li key={tIdx} className="text-xs font-mono text-red-400">
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-col gap-3 mt-auto">
+                  <ul className="flex flex-wrap gap-3">
+                    {project.tags.map((tag, tIdx) => (
+                      <li key={tIdx} className="text-xs font-mono text-red-400">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="flex gap-3 pt-2">
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 hover:border-red-600/50 text-white rounded transition-all duration-300 hover:text-red-400 font-medium text-sm flex-1"
+                    >
+                      <Github size={18} /> Ver no GitHub
+                    </a>
+                    {project.demoLink && (
+                      <a 
+                        href={project.demoLink} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="flex items-center justify-center gap-2 px-4 py-2 bg-transparent border border-red-600/50 hover:bg-red-600/10 text-red-500 hover:text-red-400 rounded transition-all duration-300 font-medium text-sm flex-1"
+                      >
+                        <ExternalLink size={18} /> Ver Demo
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
