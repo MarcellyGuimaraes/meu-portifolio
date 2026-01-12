@@ -20,8 +20,8 @@ const Skills = ({ skillsData }) => {
           {skillsData.map((skill, idx) => {
             const IconComponent = iconMap[skill.iconType];
             return (
-              <div key={idx} className="bg-neutral-900/50 border border-neutral-800 p-8 rounded-xl hover:bg-neutral-900 hover:border-red-900/50 transition-all duration-300 group hover:-translate-y-2">
-                <div className="text-red-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div key={idx} className="bg-neutral-900/50 border border-neutral-800 p-8 rounded-xl hover:bg-neutral-900 hover:border-red-900/50">
+                <div className="text-red-500 mb-6">
                   <IconComponent className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{skill.name}</h3>
