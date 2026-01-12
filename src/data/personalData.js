@@ -73,3 +73,37 @@ export const projects = [
     featured: false
   }
 ];
+
+// Serviços Oferecidos
+export const services = [
+  {
+    title: "Desenvolvimento Web",
+    iconType: "Code",
+    description: "Criação de sites e aplicações web modernas, responsivas e de alta performance. Desde landing pages até sistemas completos."
+  },
+  {
+    title: "Design UI/UX",
+    iconType: "Paintbrush",
+    description: "Design de interfaces intuitivas e atraentes, focadas na experiência do usuário e conversão."
+  },
+  {
+    title: "Desenvolvimento Mobile",
+    iconType: "Smartphone",
+    description: "Aplicativos móveis nativos e multiplataforma para iOS e Android, com design moderno e funcionalidades robustas."
+  },
+  {
+    title: "Desenvolvimento Back-end",
+    iconType: "Database",
+    description: "APIs RESTful, integração com bancos de dados e arquitetura de sistemas escaláveis e seguros."
+  },
+  {
+    title: "SEO & Otimização",
+    iconType: "Search",
+    description: "Otimização para mecanismos de busca, melhoria de performance e velocidade de carregamento."
+  },
+  {
+    title: "Manutenção & Suporte",
+    iconType: "Settings",
+    description: "Atualizações, correções, melhorias e suporte contínuo para manter seus projetos sempre funcionando perfeitamente."
+  }
+];

@@ -44,7 +44,7 @@ const Contact = ({ personalInfo }) => {
 
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
-          <p className="text-red-500 font-mono mb-4 sm:mb-6 text-sm sm:text-base">05. Vamos conversar?</p>
+          <p className="text-red-500 font-mono mb-4 sm:mb-6 text-sm sm:text-base">06. Vamos conversar?</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight px-2">
             Entre em Contato
           </h2>

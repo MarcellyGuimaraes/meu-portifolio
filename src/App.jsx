@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { personalInfo, skills, projects } from './data/personalData';
+import { personalInfo, skills, projects, services } from './data/personalData';
 import { experiences, courses } from './data/experienceData';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -7,6 +7,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
+import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -20,7 +21,7 @@ const App = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'services', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -57,6 +58,7 @@ const App = () => {
       <Skills skillsData={skills} />
       <Projects projects={projects} personalInfo={personalInfo} />
       <Experience experiences={experiences} courses={courses} />
+      <Services servicesData={services} />
       <Contact personalInfo={personalInfo} />
       <Footer personalInfo={personalInfo} />
     </div>
