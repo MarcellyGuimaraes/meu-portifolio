@@ -6,23 +6,23 @@ const About = ({ personalInfo }) => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
           <span className="text-red-600 font-mono text-xl" aria-hidden="true">01.</span>
-          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold text-white">Sobre Mim</h2>
+          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold text-white">O Que Eu Faço</h2>
           <div className="h-px bg-neutral-700 flex-grow max-w-xs" aria-hidden="true"></div>
         </div>
 
         <div className="grid md:grid-cols-5 gap-12">
           <div className="md:col-span-3 text-neutral-300 space-y-4 leading-relaxed text-lg">
             <p>
-              Olá! Sou Marcelly, uma desenvolvedora apaixonada que reside em <span className="text-white font-medium">Feira de Santana, Bahia</span>.
+              Especialista em <span className="text-white font-medium">Criação de Landing Pages, Sites Institucionais e Sistemas Web</span> usando <span className="text-white font-medium">React</span>. Atuo como desenvolvedora freelancer em <span className="text-white font-medium">Feira de Santana, Bahia</span>, entregando soluções web completas e responsivas.
             </p>
             <p>
-              Minha história com a programação começou de forma curiosa aos 14 anos, quando vi meu pai codando. Aquilo me fascinou. O que começou como curiosidade se tornou minha profissão.
+              Desenvolvo <span className="text-white font-medium">Aplicações Web Modernas</span> com foco em performance, experiência do usuário e design responsivo. Minha expertise inclui desenvolvimento Front-end com React, Vue.js e Next.js, além de Back-end com Laravel e Node.js.
             </p>
             <p>
-              {personalInfo.about}
+              Crio <span className="text-white font-medium">Sites Responsivos</span> e <span className="text-white font-medium">Aplicações Web</span> que resolvem problemas reais de negócios. Trabalho com Landing Pages otimizadas para conversão, Sites Institucionais profissionais e Sistemas Web personalizados para empresas.
             </p>
             <p>
-              Já atuei em diversos projetos como freelancer (via Upwork e 99Freelas), o que me deu a casca grossa necessária para entender prazos, clientes reais e a importância de entregar software que resolve problemas de verdade.
+              Com experiência em projetos freelancer (Upwork e 99Freelas), entendo a importância de entregar soluções que funcionam, dentro do prazo e com qualidade profissional. Cada projeto é desenvolvido com atenção aos detalhes, performance e usabilidade.
             </p>
           </div>
           <div className="md:col-span-2 relative group" aria-hidden="true">

@@ -2,7 +2,7 @@
 export const personalInfo = {
   name: "Marcelly Guimarães",
   role: "Desenvolvedora Front-end & UI Enthusiast",
-  tagline: "Transformando ideias complexas em interfaces visuais impactantes.",
+  tagline: "Especialista em Criação de Landing Pages, Sites Institucionais e Sistemas Web usando React.",
   location: "Feira de Santana, BA",
   linkedin: "https://www.linkedin.com/in/marcellyguimaraes/",
   github: "https://github.com/MarcellyGuimaraes",
