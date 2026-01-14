@@ -4,3 +4,32 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Skip link para acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #dc2626;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Melhorar contraste e foco */
+:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Prevenir layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}

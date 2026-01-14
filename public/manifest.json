@@ -1,0 +1,17 @@
+{
+  "name": "Marcelly Guimarães - Portfolio",
+  "short_name": "Marcelly G.",
+  "description": "Portfolio de Marcelly Guimarães - Desenvolvedora Front-end & UI Enthusiast",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

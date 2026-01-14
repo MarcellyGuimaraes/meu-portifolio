@@ -61,17 +61,17 @@ const Contact = ({ personalInfo }) => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden bg-neutral-900">
+    <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden bg-neutral-900" aria-labelledby="contact-heading">
       {/* Background decorative */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] bg-red-600/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] bg-red-600/5 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
 
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
-          <p className="text-red-500 font-mono mb-4 sm:mb-6 text-sm sm:text-base">06. Vamos conversar?</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight px-2">
+          <p className="text-red-500 font-mono mb-4 sm:mb-6 text-sm sm:text-base" aria-hidden="true">06. Vamos conversar?</p>
+          <h2 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight px-2">
             Entre em Contato
           </h2>
-          <p className="text-neutral-400 text-base sm:text-lg mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto px-2">
+          <p className="text-neutral-300 text-base sm:text-lg mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto px-2">
             Estou sempre em busca de novos desafios e oportunidades para colaborar em projetos incríveis. 
             Seja para um freelance, uma proposta full-time ou apenas um networking, 
             minha caixa de entrada está aberta!
@@ -92,8 +92,10 @@ const Contact = ({ personalInfo }) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                autoComplete="name"
                 className="w-full px-4 py-2.5 sm:py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all text-sm sm:text-base"
                 placeholder="Seu nome"
+                aria-required="true"
               />
             </div>
 
@@ -108,8 +110,10 @@ const Contact = ({ personalInfo }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                autoComplete="email"
                 className="w-full px-4 py-2.5 sm:py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all text-sm sm:text-base"
                 placeholder="seu@email.com"
+                aria-required="true"
               />
             </div>
 
@@ -147,13 +151,14 @@ const Contact = ({ personalInfo }) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-red-600 hover:bg-red-700 disabled:bg-red-600/50 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 disabled:hover:scale-100 flex items-center justify-center gap-2 shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] text-sm sm:text-base"
+              className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-red-600 hover:bg-red-700 disabled:bg-red-600/50 text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 disabled:hover:scale-100 flex items-center justify-center gap-2 shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+              aria-label={isSubmitting ? 'Enviando mensagem...' : 'Enviar mensagem'}
             >
               {isSubmitting ? (
-                <>Enviando...</>
+                <><span aria-hidden="true">Enviando...</span><span className="sr-only">Enviando mensagem</span></>
               ) : (
                 <>
-                  <Send size={20} /> Enviar Mensagem
+                  <Send size={20} aria-hidden="true" /> <span>Enviar Mensagem</span>
                 </>
               )}
             </button>
@@ -173,9 +178,10 @@ const Contact = ({ personalInfo }) => {
               <a
                 href={`mailto:${personalInfo.email}`}
                 onClick={handleEmailClick}
-                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group"
+                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+                aria-label={`Enviar email para ${personalInfo.email}`}
               >
-                <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0">
+                <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0" aria-hidden="true">
                   <Mail className="text-red-500" size={20} />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -187,11 +193,12 @@ const Contact = ({ personalInfo }) => {
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 onClick={handleLinkedInClick}
-                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group"
+                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+                aria-label="Visitar perfil no LinkedIn"
               >
-                <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0">
+                <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0" aria-hidden="true">
                   <Linkedin className="text-red-500" size={20} />
                 </div>
                 <div className="min-w-0 flex-1">

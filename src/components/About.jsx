@@ -2,12 +2,12 @@ import { Layout } from 'lucide-react';
 
 const About = ({ personalInfo }) => {
   return (
-    <section id="about" className="py-24 bg-[#111111] relative">
+    <section id="about" className="py-24 bg-[#111111] relative" aria-labelledby="about-heading">
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
-          <span className="text-red-600 font-mono text-xl">01.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Sobre Mim</h2>
-          <div className="h-px bg-neutral-700 flex-grow max-w-xs"></div>
+          <span className="text-red-600 font-mono text-xl" aria-hidden="true">01.</span>
+          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold text-white">Sobre Mim</h2>
+          <div className="h-px bg-neutral-700 flex-grow max-w-xs" aria-hidden="true"></div>
         </div>
 
         <div className="grid md:grid-cols-5 gap-12">
@@ -25,7 +25,7 @@ const About = ({ personalInfo }) => {
               Já atuei em diversos projetos como freelancer (via Upwork e 99Freelas), o que me deu a casca grossa necessária para entender prazos, clientes reais e a importância de entregar software que resolve problemas de verdade.
             </p>
           </div>
-          <div className="md:col-span-2 relative group">
+          <div className="md:col-span-2 relative group" aria-hidden="true">
             <div className="absolute inset-0 border-2 border-red-600 rounded translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300"></div>
             <div className="relative bg-neutral-800 rounded h-full min-h-[250px] flex items-center justify-center overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
               {/* Placeholder Image - replace with actual photo if available */}
