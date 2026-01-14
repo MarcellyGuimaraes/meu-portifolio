@@ -1,4 +1,5 @@
 import { Code, Paintbrush, Smartphone, Database, Search, Settings } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
 
 const Services = ({ servicesData }) => {
   const iconMap = {
@@ -15,6 +16,12 @@ const Services = ({ servicesData }) => {
     const message = `Olá! Tenho interesse no serviço de ${serviceTitle}. Podemos conversar?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+
+    trackEvent('generate_lead', {
+      method: 'whatsapp',
+      context: 'services_card',
+      service_name: serviceTitle,
+    });
   };
 
   return (

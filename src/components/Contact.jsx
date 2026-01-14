@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Linkedin, Send, Mail } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
 
 const Contact = ({ personalInfo }) => {
   const [formData, setFormData] = useState({
@@ -28,6 +29,12 @@ const Contact = ({ personalInfo }) => {
     
     window.location.href = mailtoLink;
 
+    trackEvent('generate_lead', {
+      method: 'contact_form',
+      context: 'contact_section',
+      has_subject: !!formData.subject,
+    });
+
     // Simulação de envio (substitua por serviço real)
     setTimeout(() => {
       setIsSubmitting(false);
@@ -35,6 +42,22 @@ const Contact = ({ personalInfo }) => {
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitStatus(null), 5000);
     }, 1000);
+  };
+
+  const handleEmailClick = () => {
+    trackEvent('select_content', {
+      content_type: 'contact',
+      item_id: 'email',
+      location: 'contact_section',
+    });
+  };
+
+  const handleLinkedInClick = () => {
+    trackEvent('select_content', {
+      content_type: 'social',
+      item_id: 'linkedin',
+      location: 'contact_section',
+    });
   };
 
   return (
@@ -149,6 +172,7 @@ const Contact = ({ personalInfo }) => {
               
               <a
                 href={`mailto:${personalInfo.email}`}
+                onClick={handleEmailClick}
                 className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group"
               >
                 <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0">
@@ -164,6 +188,7 @@ const Contact = ({ personalInfo }) => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleLinkedInClick}
                 className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group"
               >
                 <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0">
