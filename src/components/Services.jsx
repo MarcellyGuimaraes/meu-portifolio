@@ -11,15 +11,6 @@ const Services = ({ servicesData }) => {
   };
 
   const handleServiceClick = (serviceTitle) => {
-    // Enviar evento para Google Tag Manager
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'service_click',
-        service_name: serviceTitle,
-        action: 'whatsapp_click'
-      });
-    }
-
     const phoneNumber = '5575991815241';
     const message = `Olá! Tenho interesse no serviço de ${serviceTitle}. Podemos conversar?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

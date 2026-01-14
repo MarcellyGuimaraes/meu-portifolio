@@ -1,35 +1,6 @@
 import { Linkedin, Mail, Github, ChevronDown, Code, MapPin } from 'lucide-react';
 
 const Hero = ({ personalInfo, scrollTo }) => {
-  const handleGitHubClick = () => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'github_click',
-        location: 'hero'
-      });
-    }
-  };
-
-  const handleEmailClick = () => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'contact_click',
-        contact_type: 'email',
-        location: 'hero'
-      });
-    }
-  };
-
-  const handleLinkedInClick = () => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'contact_click',
-        contact_type: 'linkedin',
-        location: 'hero'
-      });
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
       {/* Background Gradients */}
@@ -65,7 +36,6 @@ const Hero = ({ personalInfo, scrollTo }) => {
               href={personalInfo.linkedin} 
               target="_blank" 
               rel="noreferrer"
-              onClick={handleLinkedInClick}
               className="px-8 py-4 bg-transparent border border-neutral-700 text-white font-bold rounded hover:border-red-600 hover:text-red-500 transition-all flex items-center justify-center gap-2"
             >
               <Linkedin size={20} /> LinkedIn
@@ -73,8 +43,8 @@ const Hero = ({ personalInfo, scrollTo }) => {
           </div>
 
           <div className="flex items-center gap-6 pt-8 text-neutral-500">
-            <a href={personalInfo.github} target="_blank" rel="noreferrer" onClick={handleGitHubClick} className="hover:text-white transition-colors"><Github size={24} /></a>
-            <a href={`mailto:${personalInfo.email}`} onClick={handleEmailClick} className="hover:text-white transition-colors"><Mail size={24} /></a>
+            <a href={personalInfo.github} target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><Github size={24} /></a>
+            <a href={`mailto:${personalInfo.email}`} className="hover:text-white transition-colors"><Mail size={24} /></a>
             <div className="w-px h-8 bg-neutral-800"></div>
             <div className="flex items-center gap-2 text-sm">
               <MapPin size={16} className="text-red-500" />

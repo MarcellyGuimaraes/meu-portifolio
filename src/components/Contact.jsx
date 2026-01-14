@@ -23,15 +23,6 @@ const Contact = ({ personalInfo }) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Enviar evento para Google Tag Manager
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'contact_form_submit',
-        form_type: 'contact',
-        has_subject: !!formData.subject
-      });
-    }
-
     // Usando mailto como fallback - para produção, integrar com EmailJS, Formspree, ou backend
     const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Contato do Portfolio')}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
     
@@ -44,26 +35,6 @@ const Contact = ({ personalInfo }) => {
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitStatus(null), 5000);
     }, 1000);
-  };
-
-  const handleEmailClick = () => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'contact_click',
-        contact_type: 'email',
-        location: 'contact_section'
-      });
-    }
-  };
-
-  const handleLinkedInClick = () => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'contact_click',
-        contact_type: 'linkedin',
-        location: 'contact_section'
-      });
-    }
   };
 
   return (
@@ -178,7 +149,6 @@ const Contact = ({ personalInfo }) => {
               
               <a
                 href={`mailto:${personalInfo.email}`}
-                onClick={handleEmailClick}
                 className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group"
               >
                 <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0">
@@ -194,7 +164,6 @@ const Contact = ({ personalInfo }) => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                onClick={handleLinkedInClick}
                 className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-neutral-900/50 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-red-600/30 group"
               >
                 <div className="p-2 sm:p-3 bg-red-600/10 rounded-lg group-hover:bg-red-600/20 transition-colors flex-shrink-0">

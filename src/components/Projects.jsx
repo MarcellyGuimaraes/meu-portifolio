@@ -8,16 +8,6 @@ const FolderIcon = ({ className }) => (
 );
 
 const Projects = ({ projects, personalInfo }) => {
-  const handleGitHubClick = (projectTitle = null, location = 'projects') => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'github_click',
-        location: location,
-        project_title: projectTitle || null
-      });
-    }
-  };
-
   return (
     <section id="projects" className="py-24 bg-[#111111]">
       <div className="max-w-6xl mx-auto px-6">
@@ -63,7 +53,6 @@ const Projects = ({ projects, personalInfo }) => {
                       href={project.link} 
                       target="_blank" 
                       rel="noreferrer"
-                      onClick={() => handleGitHubClick(project.title, 'projects_card')}
                       className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 hover:border-red-600/50 text-white rounded transition-all duration-300 hover:text-red-400 font-medium text-sm flex-1"
                     >
                       <Github size={18} /> Ver no GitHub
@@ -90,7 +79,6 @@ const Projects = ({ projects, personalInfo }) => {
             href={personalInfo.github} 
             target="_blank" 
             rel="noreferrer"
-            onClick={() => handleGitHubClick(null, 'projects_footer')}
             className="inline-flex items-center gap-2 text-white border-b-2 border-red-600 pb-1 hover:text-red-500 transition-colors font-bold tracking-wide"
           >
             Ver mais repositórios no GitHub <ExternalLink size={16} />
