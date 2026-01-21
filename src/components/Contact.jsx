@@ -45,11 +45,8 @@ const Contact = ({ personalInfo }) => {
     };
 
     // Verifica se as credenciais do EmailJS estão configuradas
-    if (!emailjsConfig.isConfigured) {
-      if (import.meta.env.DEV) {
-        console.warn('⚠️ EmailJS não está configurado. Usando fallback mailto.');
-        console.warn('📖 Para produção no Netlify, configure as variáveis de ambiente. Veja: NETLIFY_SETUP.md');
-      }
+    if (!emailjsConfig.publicKey || !emailjsConfig.serviceId || !emailjsConfig.templateId) {
+      console.warn('EmailJS não está configurado. Usando fallback mailto.');
       useMailtoFallback();
       return;
     }
