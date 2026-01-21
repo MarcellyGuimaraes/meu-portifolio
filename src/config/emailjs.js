@@ -13,11 +13,12 @@ export const emailjsConfig = {
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
 };
 
-// Expõe no window para verificação no console
+// Expõe no window para verificação no console (F12)
 if (typeof window !== 'undefined') {
   window.emailjsConfig = {
     publicKey: emailjsConfig.publicKey ? '✅ Configurado' : '❌ Não configurado',
     serviceId: emailjsConfig.serviceId ? '✅ Configurado' : '❌ Não configurado',
     templateId: emailjsConfig.templateId ? '✅ Configurado' : '❌ Não configurado',
   };
+  console.log('📧 EmailJS Status - Digite: emailjsConfig', window.emailjsConfig);
 }
