@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Linkedin, Send, Mail } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { emailjsConfig } from '../config/emailjs';
 import { trackEvent } from '../utils/analytics';
 
 const Contact = ({ personalInfo }) => {
@@ -24,24 +26,67 @@ const Contact = ({ personalInfo }) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Usando mailto como fallback - para produção, integrar com EmailJS, Formspree, ou backend
-    const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Contato do Portfolio')}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
-    
-    window.location.href = mailtoLink;
+    // Função fallback usando mailto
+    const useMailtoFallback = () => {
+      const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Contato do Portfolio')}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
+      window.location.href = mailtoLink;
+      
+      trackEvent('generate_lead', {
+        method: 'contact_form',
+        context: 'contact_section',
+        has_subject: !!formData.subject,
+        fallback: 'mailto'
+      });
 
-    trackEvent('generate_lead', {
-      method: 'contact_form',
-      context: 'contact_section',
-      has_subject: !!formData.subject,
-    });
-
-    // Simulação de envio (substitua por serviço real)
-    setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1000);
+    };
+
+    // Verifica se as credenciais do EmailJS estão configuradas
+    if (!emailjsConfig.publicKey || !emailjsConfig.serviceId || !emailjsConfig.templateId) {
+      console.warn('EmailJS não está configurado. Usando fallback mailto.');
+      useMailtoFallback();
+      return;
+    }
+
+    try {
+      // Inicializa o EmailJS com a chave pública
+      emailjs.init(emailjsConfig.publicKey);
+
+      // Prepara os parâmetros do template
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || 'Contato do Portfolio',
+        message: formData.message,
+        to_email: personalInfo.email,
+        reply_to: formData.email,
+      };
+
+      // Envia o email usando EmailJS
+      await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams
+      );
+
+      trackEvent('generate_lead', {
+        method: 'contact_form',
+        context: 'contact_section',
+        has_subject: !!formData.subject,
+      });
+
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } catch (error) {
+      // Se der erro (incluindo cota excedida), usa o fallback mailto
+      console.warn('Erro ao enviar via EmailJS (pode ser cota excedida). Usando fallback mailto:', error);
+      useMailtoFallback();
+    }
   };
 
   const handleEmailClick = () => {
@@ -165,7 +210,7 @@ const Contact = ({ personalInfo }) => {
 
             {submitStatus === 'success' && (
               <div className="p-3 sm:p-4 bg-green-900/20 border border-green-700/50 rounded-lg text-green-400 text-xs sm:text-sm">
-                Mensagem enviada! Verifique seu cliente de email.
+                ✓ Mensagem processada! Se seu cliente de email não abrir automaticamente, verifique a pasta de spam ou entre em contato diretamente.
               </div>
             )}
           </form>

@@ -1,6 +1,6 @@
 import { Layout } from 'lucide-react';
 
-const About = ({ personalInfo }) => {
+const About = () => {
   return (
     <section id="about" className="py-24 bg-[#111111] relative" aria-labelledby="about-heading">
       <div className="max-w-4xl mx-auto px-6">
