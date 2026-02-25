@@ -6,23 +6,38 @@ const About = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
           <span className="text-red-600 font-mono text-xl" aria-hidden="true">01.</span>
-          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold text-white">O Que Eu Faço</h2>
+          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold text-white heading-font">O Que Eu Faço</h2>
           <div className="h-px bg-neutral-700 flex-grow max-w-xs" aria-hidden="true"></div>
         </div>
 
         <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-3 text-neutral-300 space-y-4 leading-relaxed text-lg">
-            <p>
-              Especialista em <span className="text-white font-medium">Criação de Landing Pages, Sites Institucionais e Sistemas Web</span> usando <span className="text-white font-medium">React</span>. Atuo como desenvolvedora freelancer em <span className="text-white font-medium">Feira de Santana, Bahia</span>, entregando soluções web completas e responsivas.
+          <div className="md:col-span-3 text-neutral-300 space-y-6 leading-relaxed text-base md:text-lg">
+            <p className="uppercase text-xs tracking-[0.25em] text-red-500 heading-font">
+              PARA NEGÓCIOS QUE PRECISAM DE PRESENÇA DIGITAL FORTE
             </p>
             <p>
-              Desenvolvo <span className="text-white font-medium">Aplicações Web Modernas</span> com foco em performance, experiência do usuário e design responsivo. Minha expertise inclui desenvolvimento Front-end com React, Vue.js e Next.js, além de Back-end com Laravel e Node.js.
+              Eu ajudo empresas e profissionais a terem <span className="text-white font-medium">sites profissionais, landing pages que convertem</span> e <span className="text-white font-medium">sistemas web sob medida</span>. Atuo como desenvolvedora freelancer em <span className="text-white font-medium">Feira de Santana (BA)</span>, atendendo clientes em todo o Brasil.
             </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-neutral-900/60 border border-neutral-800 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-white mb-2 heading-font">Como posso te ajudar hoje</h3>
+                <ul className="text-sm space-y-1.5 list-disc list-inside text-neutral-300">
+                  <li>Site institucional que passa credibilidade para sua marca.</li>
+                  <li>Landing pages focadas em captar contatos e vendas.</li>
+                  <li>Sistemas web para organizar processos do seu negócio.</li>
+                </ul>
+              </div>
+              <div className="bg-neutral-900/40 border border-neutral-800 rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-white mb-2 heading-font">Minha forma de trabalho</h3>
+                <ul className="text-sm space-y-1.5 list-disc list-inside text-neutral-300">
+                  <li>Alinhamento claro de objetivos e prazos.</li>
+                  <li>Foco em performance, responsividade e UX.</li>
+                  <li>Entrega acompanhada de ajustes finos e suporte inicial.</li>
+                </ul>
+              </div>
+            </div>
             <p>
-              Crio <span className="text-white font-medium">Sites Responsivos</span> e <span className="text-white font-medium">Aplicações Web</span> que resolvem problemas reais de negócios. Trabalho com Landing Pages otimizadas para conversão, Sites Institucionais profissionais e Sistemas Web personalizados para empresas.
-            </p>
-            <p>
-              Com experiência em projetos freelancer (Upwork e 99Freelas), entendo a importância de entregar soluções que funcionam, dentro do prazo e com qualidade profissional. Cada projeto é desenvolvido com atenção aos detalhes, performance e usabilidade.
+              Trago experiência com projetos freelancer em plataformas como <span className="text-white font-medium">Upwork, 99Freelas e Fiverr</span>, sempre com foco em entregar soluções que realmente ajudam o negócio do cliente, e não apenas “mais um site na internet”.
             </p>
           </div>
           <div className="md:col-span-2 relative group" aria-hidden="true">

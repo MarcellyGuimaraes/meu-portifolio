@@ -29,18 +29,18 @@ const Experience = ({ experiences, courses }) => {
     return 9999999999999;
   };
 
-  // Ordenar experiências da mais antiga para a mais recente
+  // Ordenar experiências da mais recente para a mais antiga
   const sortedExperiences = [...experiences].sort((a, b) => {
     const dateA = getStartDate(a.period);
     const dateB = getStartDate(b.period);
-    return dateA - dateB; // Ordem crescente (mais antiga primeiro)
+    return dateB - dateA; // Mais recente primeiro
   });
 
-  // Ordenar cursos da mais antiga para a mais recente
+  // Ordenar cursos da mais recente para a mais antiga
   const sortedCourses = [...courses].sort((a, b) => {
     const dateA = getStartDate(a.period);
     const dateB = getStartDate(b.period);
-    return dateA - dateB; // Ordem crescente (mais antiga primeiro)
+    return dateB - dateA; // Mais recente primeiro
   });
 
   return (

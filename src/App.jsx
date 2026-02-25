@@ -59,7 +59,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-neutral-200 font-sans selection:bg-red-600 selection:text-white">
+    <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-red-600 selection:text-white">
       <StructuredData />
       {/* Skip link para acessibilidade */}
       <a href="#main-content" className="skip-link">

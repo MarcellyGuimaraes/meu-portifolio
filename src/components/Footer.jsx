@@ -44,11 +44,11 @@ const Footer = ({ personalInfo }) => {
            <Linkedin size={20} aria-hidden="true" />
          </a>
       </div>
-      <p className="text-neutral-400 text-sm font-mono">
-        Desenvolvido por <span className="text-red-600">{personalInfo.name}</span>
+      <p className="text-neutral-400 text-xs sm:text-sm">
+        Desenvolvido por <span className="text-red-600 font-semibold heading-font">{personalInfo.name}</span> — Sites profissionais, landing pages e sistemas web.
       </p>
-      <p className="text-neutral-500 text-xs mt-2">
-        React • Tailwind • Lucide
+      <p className="text-neutral-500 text-[11px] mt-2">
+        React • Tailwind • Lucide • Deploy em produção
       </p>
     </footer>
   );

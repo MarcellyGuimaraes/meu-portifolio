@@ -113,13 +113,12 @@ const Contact = ({ personalInfo }) => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <p className="text-red-500 font-mono mb-4 sm:mb-6 text-sm sm:text-base" aria-hidden="true">06. Vamos conversar?</p>
-          <h2 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight px-2">
+          <h2 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight px-2 heading-font">
             Entre em Contato
           </h2>
           <p className="text-neutral-300 text-base sm:text-lg mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto px-2">
-            Estou sempre em busca de novos desafios e oportunidades para colaborar em projetos incríveis. 
-            Seja para um freelance, uma proposta full-time ou apenas um networking, 
-            minha caixa de entrada está aberta!
+            Me conte um pouco sobre o seu negócio, o tipo de site ou sistema que você precisa e o prazo desejado.
+            Em até 24 horas eu retorno com os próximos passos para tirarmos seu projeto do papel.
           </p>
         </div>
 

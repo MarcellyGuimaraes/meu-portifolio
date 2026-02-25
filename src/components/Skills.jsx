@@ -13,7 +13,7 @@ const Skills = ({ skillsData }) => {
         <div className="flex items-center gap-4 mb-16 justify-end">
           <div className="h-px bg-neutral-700 flex-grow max-w-xs" aria-hidden="true"></div>
           <span className="text-red-600 font-mono text-xl" aria-hidden="true">02.</span>
-          <h2 id="skills-heading" className="text-3xl md:text-4xl font-bold text-white">Minha Stack</h2>
+          <h2 id="skills-heading" className="text-3xl md:text-4xl font-bold text-white heading-font">Minha Stack</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6" role="list">

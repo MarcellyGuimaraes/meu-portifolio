@@ -29,7 +29,7 @@ const Services = ({ servicesData }) => {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16">
           <span className="text-red-600 font-mono text-xl" aria-hidden="true">05.</span>
-          <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-white">Serviços</h2>
+          <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-white heading-font">Serviços</h2>
           <div className="h-px bg-neutral-700 flex-grow max-w-xs" aria-hidden="true"></div>
         </div>
 

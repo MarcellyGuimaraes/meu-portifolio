@@ -2,7 +2,7 @@
 export const personalInfo = {
   name: "Marcelly Guimarães",
   role: "Desenvolvedora Front-end & UI Enthusiast",
-  tagline: "Especialista em Criação de Landing Pages, Sites Institucionais e Sistemas Web usando React.",
+  tagline: "Crio sites profissionais, landing pages e sistemas web sob medida que geram resultados reais para o seu negócio.",
   location: "Feira de Santana, BA",
   linkedin: "https://www.linkedin.com/in/marcellyguimaraes/",
   github: "https://github.com/MarcellyGuimaraes",
@@ -32,19 +32,44 @@ export const skills = [
   }
 ];
 
-// Projetos (Baseados nos repositórios analisados)
+// Projetos (Clientes em produção e projetos pessoais)
 export const projects = [
   {
     title: "Gaia Pet Sitter",
-    description: "Landing page para um serviço de pet sitter em Feira de Santana. Inclui sistema de agendamento simples, que direciona o usuário para conversar e contratar via WhatsApp com apenas um clique.",
-    tags: ["React", "Landing Page", "Agendamento", "WhatsApp", "Netlify"],
+    type: "client",
+    client: "Gaia Pet Sitter",
+    description: "Landing page para um serviço de pet sitter em Feira de Santana. Estrutura pensada para gerar confiança, apresentar os serviços e facilitar o agendamento via WhatsApp.",
+    result: "Facilita a divulgação do serviço e o recebimento de pedidos de visita diretamente pelo WhatsApp.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
     link: "https://github.com/MarcellyGuimaraes/gaia-petsitter-project",
     demoLink: "https://gaiapetsitterfsa.netlify.app",
     featured: true
   },
   {
+    title: "Buscar Planos",
+    type: "client",
+    client: "BuscarPlanos",
+    description: "Plataforma para comparação de planos de saúde, com fluxo em etapas, detecção de localização e exibição de tabela oficial de planos 2026.",
+    result: "Ajuda usuários a encontrarem planos de saúde adequados de forma simples, organizada e visualmente clara.",
+    tags: ["Laravel", "Blade", "Bootstrap", "MySQL"],
+    link: "https://github.com/MarcellyGuimaraes/saude-select",
+    demoLink: "https://buscarplanos.com.br",
+    featured: true
+  },
+  {
+    title: "RobloxUniverse",
+    type: "client",
+    client: "RobloxUniverse",
+    description: "Portal de notícias, guias e dicas sobre o universo Roblox, com artigos em destaque, newsletter e estrutura otimizada para conteúdo recorrente.",
+    result: "Organiza o conteúdo do cliente e fortalece a presença digital junto à comunidade de jogadores.",
+    tags: ["WordPress", "Blog", "Conteúdo"],
+    demoLink: "https://blozx.com",
+    featured: false
+  },
+  {
     title: "Horrorflix",
-    description: "Um clone de interface de streaming focado em filmes de terror. O projeto consome APIs externas de filmes, demonstrando manipulação avançada de DOM, design responsivo e consumo de dados assíncronos.",
+    type: "personal",
+    description: "Interface de streaming focada em filmes de terror, consumindo APIs externas de filmes. Explora organização de catálogo, UI temática e consumo de dados assíncronos.",
     tags: ["JavaScript", "API Rest", "CSS3", "HTML5"],
     link: "https://github.com/MarcellyGuimaraes/Horrorflix",
     demoLink: "https://horrorflix-celly.netlify.app",
@@ -52,7 +77,8 @@ export const projects = [
   },
   {
     title: "VUTTR (Very Useful Tools)",
-    description: "Aplicação Full Stack para gerenciar um repositório de ferramentas úteis. Desafio técnico que envolveu criação de API, autenticação e um front-end moderno para listagem e busca.",
+    type: "personal",
+    description: "Aplicação Full Stack para gerenciar um repositório de ferramentas úteis. Inclui criação de API, autenticação e front-end moderno para listagem, busca e organização.",
     tags: ["React", "Node.js", "Axios", "Styled Components"],
     link: "https://github.com/MarcellyGuimaraes/vuttr-app",
     demoLink: "https://vuttr-app-celly.netlify.app",
@@ -60,16 +86,10 @@ export const projects = [
   },
   {
     title: "Mobile CRUD App",
-    description: "Aplicativo móvel desenvolvido para operações de gerenciamento de dados. Demonstra a versatilidade em transitar do desenvolvimento web para o ecossistema mobile nativo.",
+    type: "personal",
+    description: "Aplicativo móvel para gerenciamento de dados, com operações de CRUD, demonstrando versatilidade entre desenvolvimento web e mobile.",
     tags: ["React Native", "Java", "Android Studio"],
     link: "https://github.com/MarcellyGuimaraes/react-native-crud",
-    featured: false
-  },
-  {
-    title: "Soluções Freelance",
-    description: "Diversos projetos comerciais entregues via Upwork e 99Freelas, focando em sites institucionais e sistemas de gestão personalizados para pequenas empresas.",
-    tags: ["WordPress", "PHP", "Web Design", "SEO"],
-    demoLink: "https://br.fiverr.com/s/YR86j3l",
     featured: false
   }
 ];
@@ -79,31 +99,31 @@ export const services = [
   {
     title: "Desenvolvimento Web",
     iconType: "Code",
-    description: "Criação de sites e aplicações web modernas, responsivas e de alta performance. Desde landing pages até sistemas completos."
+    description: "Pacote ideal para empresas e profissionais que precisam de um site institucional ou landing page profissional. Inclui layout personalizado, responsivo, integração com WhatsApp e formulário de contato."
   },
   {
     title: "Design UI/UX",
     iconType: "Paintbrush",
-    description: "Design de interfaces intuitivas e atraentes, focadas na experiência do usuário e conversão."
+    description: "Criação ou refino visual de interfaces com foco em conversão e experiência do usuário. Ideal para quem já tem um projeto no ar, mas sente que o visual não representa o nível do negócio."
   },
   {
     title: "Desenvolvimento Mobile",
     iconType: "Smartphone",
-    description: "Aplicativos móveis nativos e multiplataforma para iOS e Android, com design moderno e funcionalidades robustas."
+    description: "Aplicativos móveis multiplataforma com React Native, ideais para negócios que querem chegar ao bolso do cliente sem investir em dois códigos diferentes (Android e iOS)."
   },
   {
     title: "Desenvolvimento Back-end",
     iconType: "Database",
-    description: "APIs RESTful, integração com bancos de dados e arquitetura de sistemas escaláveis e seguros."
+    description: "Criação de APIs RESTful, integração com bancos de dados e lógica de negócio para sistemas web. Indicado para quem precisa tirar um sistema interno do papel ou modernizar o que já existe."
   },
   {
     title: "SEO & Otimização",
     iconType: "Search",
-    description: "Otimização para mecanismos de busca, melhoria de performance e velocidade de carregamento."
+    description: "Otimização técnica para mecanismos de busca (SEO) e performance, melhorando tempo de carregamento, estrutura de conteúdo e boas práticas para ranquear melhor no Google."
   },
   {
     title: "Manutenção & Suporte",
     iconType: "Settings",
-    description: "Atualizações, correções, melhorias e suporte contínuo para manter seus projetos sempre funcionando perfeitamente."
+    description: "Atualizações, correções, melhorias evolutivas e suporte contínuo para manter seu site ou sistema sempre saudável, seguro e atualizado."
   }
 ];
