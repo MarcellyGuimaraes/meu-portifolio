@@ -27,7 +27,7 @@ const Contact = ({ personalInfo }) => {
     setSubmitStatus(null);
 
     // Função fallback usando mailto
-    const useMailtoFallback = () => {
+    const mailtoFallback = () => {
       const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Contato do Portfolio')}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
       window.location.href = mailtoLink;
       
@@ -47,7 +47,7 @@ const Contact = ({ personalInfo }) => {
     // Verifica se as credenciais do EmailJS estão configuradas
     if (!emailjsConfig.publicKey || !emailjsConfig.serviceId || !emailjsConfig.templateId) {
       console.warn('EmailJS não está configurado. Usando fallback mailto.');
-      useMailtoFallback();
+      mailtoFallback();
       return;
     }
 
@@ -85,7 +85,7 @@ const Contact = ({ personalInfo }) => {
     } catch (error) {
       // Se der erro (incluindo cota excedida), usa o fallback mailto
       console.warn('Erro ao enviar via EmailJS (pode ser cota excedida). Usando fallback mailto:', error);
-      useMailtoFallback();
+      mailtoFallback();
     }
   };
 

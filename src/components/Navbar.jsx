@@ -11,7 +11,11 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-neutral-950/95 backdrop-blur-md border-b border-red-900/30 py-4' : 'bg-transparent py-6'}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled || isMenuOpen
+          ? 'bg-neutral-950/95 backdrop-blur-md border-b border-red-900/30 py-4'
+          : 'bg-transparent py-6'
+      }`}
       aria-label="Navegação principal"
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -66,11 +70,17 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
       {/* Mobile Menu */}
       <div 
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 bg-neutral-950 z-40 transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} pt-24 px-6`}
+        className={`md:hidden fixed inset-0 z-40 bg-neutral-950/95 transform transition-transform duration-300 ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        } pt-24 px-6`}
         role="menu"
         aria-hidden={!isMenuOpen}
+        onClick={handleMenuClose}
       >
-         <div className="flex flex-col space-y-6">
+       <div
+          className="flex flex-col space-y-6"
+          onClick={(e) => e.stopPropagation()}
+        >
           {['Home', 'Sobre', 'Habilidades', 'Projetos', 'Experiência', 'Serviços', 'Contato'].map((item) => {
              const id = item.toLowerCase() === 'home' ? 'home' : item.toLowerCase() === 'sobre' ? 'about' : item.toLowerCase() === 'habilidades' ? 'skills' : item.toLowerCase() === 'projetos' ? 'projects' : item.toLowerCase() === 'experiência' ? 'experience' : item.toLowerCase() === 'serviços' ? 'services' : 'contact';
              return (
