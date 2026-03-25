@@ -19,8 +19,7 @@ export default defineConfig({
         },
       },
     },
-    // Uma única folha de estilos reduz a chance de mais requests bloqueando render
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     sourcemap: false,
     chunkSizeWarningLimit: 1000,
     reportCompressedSize: false, // Melhora velocidade de build

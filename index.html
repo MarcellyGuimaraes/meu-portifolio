@@ -48,7 +48,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Precarrega as fontes para melhorar LCP em mobile -->
+    <!--
+      Não bloquear render com o CSS do Google Fonts.
+      Lighthouse costuma penalizar quando a stylesheet de fontes atrasa o LCP.
+    -->
     <link
       rel="preload"
       as="style"
@@ -56,10 +59,7 @@
       onload="this.onload=null;this.rel='stylesheet'"
     >
     <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
-      >
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     </noscript>
 
     <!-- Preload critical resources -->

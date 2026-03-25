@@ -18,6 +18,7 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [showBelowFold, setShowBelowFold] = useState(false);
 
   // Efeito de scroll para Navbar e Seções Ativas com throttling para performance
   useEffect(() => {
@@ -50,6 +51,13 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Importa/carrega conteúdo abaixo da dobra depois do primeiro "setup".
+  // Isso reduz concorrência de requests/CPU no começo e costuma melhorar LCP no mobile.
+  useEffect(() => {
+    const t = setTimeout(() => setShowBelowFold(true), 800);
+    return () => clearTimeout(t);
+  }, []);
+
   const scrollTo = (id) => {
     setIsMenuOpen(false);
     const element = document.getElementById(id);
@@ -74,18 +82,22 @@ const App = () => {
       />
       <main id="main-content">
         <Hero personalInfo={personalInfo} scrollTo={scrollTo} />
-        <Suspense fallback={null}>
-          <About personalInfo={personalInfo} />
-          <Skills skillsData={skills} />
-          <Projects projects={projects} personalInfo={personalInfo} />
-          <Experience experiences={experiences} courses={courses} />
-          <Services servicesData={services} />
-          <Contact personalInfo={personalInfo} />
-        </Suspense>
+        {showBelowFold && (
+          <Suspense fallback={null}>
+            <About personalInfo={personalInfo} />
+            <Skills skillsData={skills} />
+            <Projects projects={projects} personalInfo={personalInfo} />
+            <Experience experiences={experiences} courses={courses} />
+            <Services servicesData={services} />
+            <Contact personalInfo={personalInfo} />
+          </Suspense>
+        )}
       </main>
-      <Suspense fallback={null}>
-        <Footer personalInfo={personalInfo} />
-      </Suspense>
+      {showBelowFold && (
+        <Suspense fallback={null}>
+          <Footer personalInfo={personalInfo} />
+        </Suspense>
+      )}
     </div>
   );
 };
