@@ -44,21 +44,21 @@ const Hero = ({ personalInfo, scrollTo }) => {
             <span>Disponível para projetos freelance</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight heading-font">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight heading-font">
             Olá, eu sou <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
               {personalInfo.name}
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-neutral-300 max-w-xl leading-relaxed border-l-4 border-red-600/70 pl-6 heading-font">
+          <p className="text-lg md:text-xl text-neutral-300 max-w-xl leading-relaxed border-l-4 border-red-600/70 pl-6">
             {personalInfo.tagline}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-5">
             <button 
               onClick={handleCtaClick}
-              className="px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-neutral-900 text-sm md:text-base heading-font"
+              className="px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-neutral-900 text-sm md:text-base"
               aria-label="Ver projetos em destaque"
             >
               Ver Meu Trabalho
@@ -68,14 +68,14 @@ const Hero = ({ personalInfo, scrollTo }) => {
               target="_blank" 
               rel="noreferrer noopener"
               onClick={handleLinkedInClick}
-              className="px-8 py-4 bg-transparent border border-neutral-700/80 text-white font-semibold rounded-lg hover:border-red-500 hover:text-red-400 transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-neutral-900 text-sm md:text-base heading-font"
+              className="px-8 py-4 bg-transparent border border-neutral-700/80 text-white font-semibold rounded-lg hover:border-red-500 hover:text-red-400 transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-neutral-900 text-sm md:text-base"
               aria-label="Visitar perfil no LinkedIn"
             >
               <Linkedin size={20} aria-hidden="true" /> LinkedIn
             </a>
           </div>
 
-          <div className="flex items-center gap-6 pt-8 text-neutral-400 heading-font" role="list">
+          <div className="flex items-center gap-6 pt-8 text-neutral-400" role="list">
             <a 
               href={personalInfo.github} 
               target="_blank" 

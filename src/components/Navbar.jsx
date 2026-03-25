@@ -20,7 +20,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <button 
-          className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded heading-font"
+          className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded"
           onClick={() => scrollTo('home')}
           aria-label="Ir para o início da página"
         >
