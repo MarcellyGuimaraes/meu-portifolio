@@ -44,7 +44,7 @@ const Projects = ({ projects, personalInfo }) => {
             >
               <div className="p-6 md:p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="flex justify-between items-start mb-3">
+                  {/* <div className="flex justify-between items-start mb-3">
                     <div className="flex items-center gap-3">
                       <FolderIcon className={`w-10 h-10 ${project.featured ? 'text-red-500' : 'text-neutral-600'}`} aria-hidden="true" />
                       {project.type === 'client' && (
@@ -58,7 +58,7 @@ const Projects = ({ projects, personalInfo }) => {
                         </span>
                       )}
                     </div>
-                  </div>
+                  </div> */}
 
                   <h3 className={`text-2xl font-bold text-white mb-3 group-hover:text-red-500 transition-colors heading-font ${project.featured ? 'text-3xl' : ''}`}>
                     {project.title}
