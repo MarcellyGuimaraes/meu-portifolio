@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }) => {
@@ -9,6 +10,23 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') handleMenuClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -18,7 +36,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
       }`}
       aria-label="Navegação principal"
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
         <button 
           className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded"
           onClick={() => scrollTo('home')}
@@ -70,17 +88,38 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
       {/* Mobile Menu */}
       <div 
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 z-40 bg-neutral-950/95 transform transition-transform duration-300 ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } pt-24 px-6`}
+        className={`md:hidden fixed inset-0 z-40 bg-neutral-950 transform transition-transform duration-300 ${
+          isMenuOpen ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none'
+        } px-6 pt-6 overflow-y-auto`}
         role="menu"
         aria-hidden={!isMenuOpen}
         onClick={handleMenuClose}
       >
-       <div
-          className="flex flex-col space-y-6"
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div onClick={(e) => e.stopPropagation()}>
+          <div className="flex items-center justify-between">
+            <button
+              className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded"
+              onClick={() => {
+                scrollTo('home');
+                handleMenuClose();
+              }}
+              aria-label="Ir para o início da página"
+            >
+              <span className="text-white group-hover:text-red-500 transition-colors">M</span>
+              <span className="text-red-600">.</span>
+              <span className="text-white group-hover:text-red-500 transition-colors">G</span>
+            </button>
+
+            <button
+              className="text-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded p-2"
+              onClick={handleMenuClose}
+              aria-label="Fechar menu"
+            >
+              <X aria-hidden="true" />
+            </button>
+          </div>
+
+          <div className="flex flex-col space-y-6 mt-10">
           {['Home', 'Sobre', 'Habilidades', 'Projetos', 'Experiência', 'Serviços', 'Contato'].map((item) => {
              const id = item.toLowerCase() === 'home' ? 'home' : item.toLowerCase() === 'sobre' ? 'about' : item.toLowerCase() === 'habilidades' ? 'skills' : item.toLowerCase() === 'projetos' ? 'projects' : item.toLowerCase() === 'experiência' ? 'experience' : item.toLowerCase() === 'serviços' ? 'services' : 'contact';
              return (
@@ -98,7 +137,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
               </button>
              )
           })}
-         </div>
+          </div>
+        </div>
       </div>
     </nav>
   );
