@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }) => {
@@ -10,33 +9,16 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
     setIsMenuOpen(false);
   };
 
-  useEffect(() => {
-    if (!isMenuOpen) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') handleMenuClose();
-    };
-    window.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isMenuOpen]);
-
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled || isMenuOpen
-          ? 'bg-neutral-950/95 backdrop-blur-md border-b border-red-900/30 py-4'
+          ? 'bg-black border-b border-red-900/30 py-4'
           : 'bg-transparent py-6'
       }`}
       aria-label="Navegação principal"
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[60]">
         <button 
           className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded"
           onClick={() => scrollTo('home')}
@@ -88,7 +70,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
       {/* Mobile Menu */}
       <div 
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 z-40 bg-neutral-950 transform transition-transform duration-300 ${
+        className={`md:hidden fixed inset-0 z-50 bg-black transform transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none'
         } px-6 pt-6 overflow-y-auto`}
         role="menu"
@@ -98,7 +80,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
         <div onClick={(e) => e.stopPropagation()}>
           <div className="flex items-center justify-between">
             <button
-              className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded"
+              className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-black rounded"
               onClick={() => {
                 scrollTo('home');
                 handleMenuClose();
@@ -110,8 +92,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
               <span className="text-white group-hover:text-red-500 transition-colors">G</span>
             </button>
 
-            <button
-              className="text-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded p-2"
+            <button 
+              className="text-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-black rounded p-2" 
               onClick={handleMenuClose}
               aria-label="Fechar menu"
             >
