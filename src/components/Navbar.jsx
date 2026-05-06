@@ -11,14 +11,14 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-40 transition-all duration-300 ${
         scrolled || isMenuOpen
           ? 'bg-black border-b border-red-900/30 py-4'
           : 'bg-transparent py-6'
       }`}
       aria-label="Navegação principal"
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[60]">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <button 
           className="text-2xl font-bold tracking-tighter cursor-pointer group focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-neutral-950 rounded"
           onClick={() => scrollTo('home')}
@@ -70,7 +70,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, activeSection, scrolled, scrollTo }
       {/* Mobile Menu */}
       <div 
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 z-50 bg-black transform transition-transform duration-300 ${
+        className={`md:hidden fixed inset-0 z-[70] bg-black transform transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none'
         } px-6 pt-6 overflow-y-auto`}
         role="menu"
