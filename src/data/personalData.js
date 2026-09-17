@@ -16,13 +16,13 @@ export const skills = [
     name: "Front-end & UI", 
     iconType: "Layout", 
     description: "Criação de interfaces responsivas e pixel-perfect.",
-    items: ["React.js", "Vue.js", "Next.js", "Tailwind CSS", "Bootstrap", "Figma"] 
+    items: ["React.js", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS", "Figma"]
   },
   { 
     name: "Back-end & DB", 
     iconType: "Server", 
     description: "Lógica robusta e gerenciamento de dados.",
-    items: ["PHP (Laravel)", "Node.js", "Python (Django)", "MySQL", "SQL Server"] 
+    items: ["PHP (Laravel)", "Node.js", "Supabase", "PostgreSQL", "MySQL", "Python (Django)"]
   },
   { 
     name: "Mobile & Tools", 
@@ -32,17 +32,27 @@ export const skills = [
   }
 ];
 
-// Projetos (Clientes em produção e projetos pessoais)
+// Projetos (Sistemas em produção, projetos para clientes e desafios técnicos)
 export const projects = [
   {
-    title: "Gaia Pet Sitter",
+    title: "SindiproSE — Portal do Sindicato",
     type: "client",
-    client: "Gaia Pet Sitter",
-    description: "Landing page para um serviço de pet sitter em Feira de Santana. Estrutura pensada para gerar confiança, apresentar os serviços e facilitar o agendamento via WhatsApp.",
-    result: "Facilita a divulgação do serviço e o recebimento de pedidos de visita diretamente pelo WhatsApp.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-    link: "https://github.com/MarcellyGuimaraes/gaia-petsitter-project",
-    demoLink: "https://gaiapetsitterfsa.netlify.app",
+    client: "SindiproSE",
+    description: "Plataforma institucional completa para o Sindicato dos Provedores de Internet de Sergipe, reunindo três frentes no mesmo sistema: site público (notícias, convenções CCT/ACT, diretoria e parceiros), painel administrativo da diretoria para gestão de todo o conteúdo e área logada do associado com feed de comunicados e documentos privados.",
+    result: "Centraliza comunicação, documentos e gestão de associados em um único sistema, com autenticação e permissões por perfil.",
+    tags: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS"],
+    link: "https://github.com/MarcellyGuimaraes/sindipro",
+    demoLink: "https://sindipro-ten.vercel.app",
+    featured: true
+  },
+  {
+    title: "CRM Kikos Fitness",
+    type: "personal",
+    description: "CRM full stack de gestão de leads e negócios para times de vendas: funil em kanban com transição por arrastar e soltar, histórico de interações por comentários, ação de ganho/perdido e dashboard com indicadores por vendedor. Monorepo com TypeScript de ponta a ponta e validações compartilhadas entre back-end e front-end.",
+    result: "Demo pública em nuvem (login: ana@kikos.com / kikos123) para explorar o funil, o dashboard e a gestão de leads.",
+    tags: ["TypeScript", "React", "Node.js", "Monorepo"],
+    link: "https://github.com/MarcellyGuimaraes/kikos-crm-teste-tecnico",
+    demoLink: "https://crm-kikos.onrender.com",
     featured: true
   },
   {
@@ -54,42 +64,45 @@ export const projects = [
     tags: ["Laravel", "Blade", "Bootstrap", "MySQL"],
     link: "https://github.com/MarcellyGuimaraes/saude-select",
     demoLink: "https://buscarplanos.com.br",
-    featured: true
+    featured: false
   },
   {
-    title: "RobloxUniverse",
+    title: "NexCert — Certificados Digitais",
     type: "client",
-    client: "RobloxUniverse",
-    description: "Portal de notícias, guias e dicas sobre o universo Roblox, com artigos em destaque, newsletter e estrutura otimizada para conteúdo recorrente.",
-    result: "Organiza o conteúdo do cliente e fortalece a presença digital junto à comunidade de jogadores.",
-    tags: ["WordPress", "Blog", "Conteúdo"],
-    demoLink: "https://blozx.com",
+    client: "NexCert",
+    description: "Site institucional e comercial de uma certificadora digital, com apresentação da marca, planos de certificados (e-CPF, e-CNPJ A1/A3 e combos), preços, benefícios e chamadas para compra e atendimento via WhatsApp. Foco em clareza da oferta e conversão.",
+    result: "Apresenta os produtos ICP-Brasil de forma organizada e direciona o cliente para a compra e o atendimento.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    demoLink: "https://next-cert-certificados.vercel.app",
     featured: false
   },
   {
-    title: "Horrorflix",
+    title: "Di Santinni — Home E-commerce",
     type: "personal",
-    description: "Interface de streaming focada em filmes de terror, consumindo APIs externas de filmes. Explora organização de catálogo, UI temática e consumo de dados assíncronos.",
-    tags: ["JavaScript", "API Rest", "CSS3", "HTML5"],
-    link: "https://github.com/MarcellyGuimaraes/Horrorflix",
-    demoLink: "https://horrorflix-celly.netlify.app",
+    description: "Home mobile de e-commerce da marca Di Santinni, desenvolvida a partir do layout no Figma: hero em carrossel, catálogo, compra por tamanho, sacola e navegação SPA. Fidelidade ao design via CSS Modules e design tokens, com foco em acessibilidade (ARIA) e SEO.",
+    tags: ["React 19", "Vite", "React Router", "CSS Modules"],
+    link: "https://github.com/MarcellyGuimaraes/wicomm-disantinni",
+    demoLink: "https://wicomm-disantinni.vercel.app",
     featured: false
   },
   {
-    title: "VUTTR (Very Useful Tools)",
+    title: "Card Explorer — Magic",
     type: "personal",
-    description: "Aplicação Full Stack para gerenciar um repositório de ferramentas úteis. Inclui criação de API, autenticação e front-end moderno para listagem, busca e organização.",
-    tags: ["React", "Node.js", "Axios", "Styled Components"],
-    link: "https://github.com/MarcellyGuimaraes/vuttr-app",
-    demoLink: "https://vuttr-app-celly.netlify.app",
+    description: "Aplicação para busca e exploração de cartas de Magic: The Gathering, consumindo a API pública do Scryfall. Busca em tempo real, filtro pelas cinco cores de mana, detalhe em modal e identidade visual temática própria — tudo sem bibliotecas extras de UI ou data-fetching.",
+    tags: ["React 19", "TypeScript", "Vite", "API Rest"],
+    link: "https://github.com/MarcellyGuimaraes/magic-simbiox",
+    demoLink: "https://magic-simbiox.vercel.app",
     featured: false
   },
   {
-    title: "Mobile CRUD App",
-    type: "personal",
-    description: "Aplicativo móvel para gerenciamento de dados, com operações de CRUD, demonstrando versatilidade entre desenvolvimento web e mobile.",
-    tags: ["React Native", "Java", "Android Studio"],
-    link: "https://github.com/MarcellyGuimaraes/react-native-crud",
+    title: "Gaia Pet Sitter",
+    type: "client",
+    client: "Gaia Pet Sitter",
+    description: "Landing page para um serviço de pet sitter em Feira de Santana. Estrutura pensada para gerar confiança, apresentar os serviços e facilitar o agendamento via WhatsApp.",
+    result: "Facilita a divulgação do serviço e o recebimento de pedidos de visita diretamente pelo WhatsApp.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+    link: "https://github.com/MarcellyGuimaraes/gaia-petsitter-project",
+    demoLink: "https://gaiapetsitterfsa.netlify.app",
     featured: false
   }
 ];
