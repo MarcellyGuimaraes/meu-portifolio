@@ -115,7 +115,7 @@ const Hero = ({ personalInfo, scrollTo }) => {
             <div className="space-y-3 font-mono text-xs text-neutral-400">
               <div className="flex"><span className="text-red-500 mr-2">const</span> <span className="text-white">developer</span> = {'{'}</div>
               <div className="pl-4">name: <span className="text-green-400">'{personalInfo.name}'</span>,</div>
-              <div className="pl-4">skills: ['React', 'Laravel', 'UI'],</div>
+              <div className="pl-4">skills: ['React', 'Node.js', 'TypeScript'],
               <div className="pl-4">status: <span className="text-green-400">'Ready to code'</span></div>
               <div>{'}'};</div>
               <div className="h-20"></div>

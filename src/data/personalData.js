@@ -1,7 +1,7 @@
 // Dados Pessoais Baseados na Análise
 export const personalInfo = {
   name: "Marcelly Guimarães",
-  role: "Desenvolvedora Front-end & UI Enthusiast",
+  role: "Desenvolvedora Full Stack (React + Node.js)",
   tagline: "Crio sites profissionais, landing pages e sistemas web sob medida que geram resultados reais para o seu negócio.",
   location: "Feira de Santana, BA",
   linkedin: "https://www.linkedin.com/in/marcellyguimaraes/",

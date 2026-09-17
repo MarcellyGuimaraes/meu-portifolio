@@ -46,7 +46,7 @@ const About = () => {
               {/* Placeholder Image - replace with actual photo if available */}
               <div className="text-center p-6">
                 <Layout size={48} className="mx-auto text-red-500 mb-2" />
-                <span className="font-mono text-sm text-neutral-400">Front-end &<br/>Visual Design</span>
+                <span className="font-mono text-sm text-neutral-400">Full Stack<br/>React + Node.js</span>
               </div>
             </div>
           </div>
