@@ -41,8 +41,7 @@ export const projects = [
     description: "Plataforma institucional completa para o Sindicato dos Provedores de Internet de Sergipe, reunindo três frentes no mesmo sistema: site público (notícias, convenções CCT/ACT, diretoria e parceiros), painel administrativo da diretoria para gestão de todo o conteúdo e área logada do associado com feed de comunicados e documentos privados.",
     result: "Centraliza comunicação, documentos e gestão de associados em um único sistema, com autenticação e permissões por perfil.",
     tags: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS"],
-    link: "https://github.com/MarcellyGuimaraes/sindipro",
-    demoLink: "https://sindipro-ten.vercel.app",
+    demoLink: "https://www.sindiprose.com.br/",
     featured: true
   },
   {
@@ -73,7 +72,7 @@ export const projects = [
     description: "Site institucional e comercial de uma certificadora digital, com apresentação da marca, planos de certificados (e-CPF, e-CNPJ A1/A3 e combos), preços, benefícios e chamadas para compra e atendimento via WhatsApp. Foco em clareza da oferta e conversão.",
     result: "Apresenta os produtos ICP-Brasil de forma organizada e direciona o cliente para a compra e o atendimento.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    demoLink: "https://next-cert-certificados.vercel.app",
+    demoLink: "https://nexcertbr.com.br",
     featured: false
   },
   {
